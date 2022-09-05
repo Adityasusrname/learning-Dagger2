@@ -7,13 +7,18 @@ class Car {
     companion object{
        private val TAG:String = "CAR"
     }
-    private var Engine:Engine?=null
+   @Inject lateinit var Engine:Engine
     private var Wheels:Wheels?=null
 
     @Inject
-    constructor(Engine: Engine?, Wheels: Wheels?) {
-        this.Engine = Engine
+    constructor( Wheels: Wheels?) {
+
         this.Wheels = Wheels
+    }
+
+    @Inject
+    fun enableRemote(Remote:Remote){
+        Remote.setListener(this)
     }
 
     fun drive(){
