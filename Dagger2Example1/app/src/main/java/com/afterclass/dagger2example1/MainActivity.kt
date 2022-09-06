@@ -6,8 +6,9 @@ import javax.inject.Inject
 
 
 class MainActivity : AppCompatActivity() {
-    
+
   @Inject lateinit var Car:Car //It cannot be made private
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)

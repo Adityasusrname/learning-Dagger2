@@ -12,7 +12,6 @@ class Car {
 
     @Inject
     constructor( Wheels: Wheels?) {
-
         this.Wheels = Wheels
     }
 
