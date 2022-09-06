@@ -7,11 +7,12 @@ class Car {
     companion object{
        private val TAG:String = "CAR"
     }
-   @Inject lateinit var Engine:Engine
+    private var Engine:Engine?=null
     private var Wheels:Wheels?=null
 
     @Inject
-    constructor( Wheels: Wheels?) {
+    constructor( Engine:Engine?,Wheels: Wheels?) {
+        this.Engine=Engine
         this.Wheels = Wheels
     }
 
@@ -21,6 +22,7 @@ class Car {
     }
 
     fun drive(){
+        Engine?.start()
         Log.d(TAG, "driving....")
     }
 }
