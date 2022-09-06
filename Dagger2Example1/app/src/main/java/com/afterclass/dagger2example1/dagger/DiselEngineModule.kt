@@ -4,9 +4,18 @@ import com.afterclass.dagger2example1.car.DiselEngine
 import com.afterclass.dagger2example1.car.Engine
 import dagger.Binds
 import dagger.Module
+import dagger.Provides
 
 @Module
-abstract class DiselEngineModule {
-    @Binds
-    abstract fun bindEngine(DiselEngine: DiselEngine): Engine
+class DiselEngineModule {
+    private var horsepower : Int
+
+    constructor(horsepower: Int) {
+        this.horsepower = horsepower
+    }
+
+    @Provides
+    fun bindEngine(): Engine{
+        return DiselEngine(horsepower)
+    }
 }

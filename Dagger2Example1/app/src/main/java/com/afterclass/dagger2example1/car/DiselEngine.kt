@@ -7,11 +7,14 @@ class DiselEngine : Engine {
     companion object{
         private val TAG = "CAR"
     }
-    @Inject
-    constructor(){
+    private var horsepower : Int
 
+    constructor(horsepower: Int) {
+        this.horsepower = horsepower
     }
+
+
     override fun start() {
-        Log.d(TAG,"Disel engine started!")
+        Log.d(TAG,"Disel engine started! and horsepower = $horsepower")
     }
 }
