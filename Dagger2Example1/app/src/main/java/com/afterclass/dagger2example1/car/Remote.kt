@@ -1,4 +1,4 @@
-package com.afterclass.dagger2example1
+package com.afterclass.dagger2example1.car
 
 import android.util.Log
 import javax.inject.Inject
@@ -13,7 +13,7 @@ class Remote {
     constructor(){
 
     }
-    fun setListener(Car:Car){
+    fun setListener(Car: Car){
         Log.d(TAG,"Remote connected")
     }
 

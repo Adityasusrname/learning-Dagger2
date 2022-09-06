@@ -1,4 +1,4 @@
-package com.afterclass.dagger2example1
+package com.afterclass.dagger2example1.car
 
 import android.util.Log
 import javax.inject.Inject
@@ -7,17 +7,17 @@ class Car {
     companion object{
        private val TAG:String = "CAR"
     }
-    private var Engine:Engine?=null
-    private var Wheels:Wheels?=null
+    private var Engine: Engine?=null
+    private var Wheels: Wheels?=null
 
     @Inject
-    constructor( Engine:Engine?,Wheels: Wheels?) {
+    constructor(Engine: Engine?, Wheels: Wheels?) {
         this.Engine=Engine
         this.Wheels = Wheels
     }
 
     @Inject
-    fun enableRemote(Remote:Remote){
+    fun enableRemote(Remote: Remote){
         Remote.setListener(this)
     }
 
